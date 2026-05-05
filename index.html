@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Undangan Tasyakuran Kelahiran Ronaldo</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Arial', sans-serif;
+      color: #fff;
+      min-height: 100vh;
+      /* PAKE FOTO LU SENDIRI - NAMA FILE: bg.jpg */
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                  url('./bg.jpg') center/cover no-repeat fixed;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    
+    .container {
+      max-width: 650px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(8px);
+      border-radius: 20px;
+      padding: 40px 30px;
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      font-weight: 300;
+      letter-spacing: 3px;
+    }
+    
+    h2 {
+      font-size: 50px;
+      margin: 15px 0;
+      font-weight: 700;
+      color: #FFD700;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+    
+    .dan {
+      font-size: 24px;
+      margin: 10px 0;
+      font-style: italic;
+    }
+    
+    .info {
+      margin: 25px 0;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+    
+    /* COUNTDOWN TIMER */
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin: 30px 0;
+      flex-wrap: wrap;
+    }
+    
+    .countdown-box {
+      background: rgba(255, 215, 0, 0.2);
+      border: 2px solid #FFD700;
+      border-radius: 10px;
+      padding: 15px 10px;
+      min-width: 70px;
+    }
+    
+    .countdown-box .angka {
+      font-size: 28px;
+      font-weight: bold;
+      color: #FFD700;
+      display: block;
+    }
+    
+    .countdown-box .label {
+      font-size: 12px;
+      margin-top: 5px;
+      opacity: 0.9;
+    }
+    
+    .tanggal {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 20px 0;
+      color: #FFD700;
+    }
+    
+    .lokasi {
+      margin-top: 20px;
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      font-size: 15px;
+    }
+    
+    .btn-music {
+      position: fixed;
+      bottom: 70px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: #FFD700;
+      color: #333;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      z-index: 9999;
+    }
+    
+    /* Watermark ADS Creative */
+    .watermark-ads-creative {
+      position: fixed;
+      bottom: 15px;
+      right: 15px;
+      z-index: 99999;
+      background: rgba(0, 0, 0, 0.6);
+      color: #FFD700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: bold;
+      pointer-events: none;
+    }
+    
+    /* KHUSUS HP */
+    @media only screen and (max-width: 600px) {
+      body { padding: 15px; }
+      .container { padding: 25px 20px; }
+      h1 { font-size: 20px; }
+      h2 { font-size: 38px; }
+      .info { font-size: 14px; }
+      .countdown { gap: 8px; }
+      .countdown-box { min-width: 60px; padding: 10px 5px; }
+      .countdown-box .angka { font-size: 22px; }
+      .countdown-box .label { font-size: 10px; }
+      .tanggal { font-size: 16px; }
+      .lokasi { font-size: 13px; }
+      .watermark-ads-creative { font-size: 10px; padding: 5px 10px; }
+      .btn-music { width: 45px; height: 45px; font-size: 20px; bottom: 60px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>UNDANGAN TASYAKURAN </h1>
+    <h2>Ronaldo</h2>
+    
+    <div class="info">
+      <p>Dengan memohon rahmat dan ridho Allah SWT,<br>
+      kami mengundang Anda untuk hadir di hari bahagia kelahiran anak kami</p>
+    </div>
+    
+    <!-- COUNTDOWN TIMER -->
+    <div class="countdown">
+      <div class="countdown-box">
+        <span class="angka" id="hari">00</span>
+        <span class="label">Hari</span>
+      </div>
+      <div class="countdown-box">
+        <span class="angka" id="jam">00</span>
+        <span class="label">Jam</span>
+      </div>
+      <div class="countdown-box">
+        <span class="angka" id="menit">00</span>
+        <span class="label">Menit</span>
+      </div>
+      <div class="countdown-box">
+        <span class="angka" id="detik">00</span>
+        <span class="label">Detik</span>
+      </div>
+    </div>
+    
+    <div class="tanggal">
+      Sabtu, 20 Mei 2026<br>
+      Pukul 10.00 WIB - Selesai
+    </div>
+    
+    <div class="lokasi">
+      <strong>Bertempat di:</strong><br>
+      <br>
+      Jl.Belimbing,Muntang Tapus ,Komplek Pertamina Prabumulih
+    </div>
+  </div>
+
+  <!-- Tombol Musik -->
+  <button class="btn-music" onclick="toggleMusic()">🔊</button>
+  
+  <!-- PAKE LAGU LU SENDIRI - NAMA FILE: lagu.mp3 -->
+  <audio id="bgMusic" loop>
+    <source src="./lagu.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Watermark -->
+  <div class="watermark-ads-creative">⚡ ADS Creative</div>
+
+  <script>
+    // 1. MUSIK AUTO PLAY
+    let musikPlay = false;
+    const audio = document.getElementById('bgMusic');
+    const btnMusic = document.querySelector('.btn-music');
+    
+    document.body.addEventListener('click', function() {
+      if (!musikPlay) {
+        audio.play();
+        musikPlay = true;
+      }
+    });
+    
+    function toggleMusic() {
+      if (audio.paused) {
+        audio.play();
+        btnMusic.innerHTML = '🔊';
+      } else {
+        audio.pause();
+        btnMusic.innerHTML = '🔇';
+      }
+    }
+    
+    // 2. COUNTDOWN TIMER - GANTI TANGGAL ACARA DI SINI MIN
+    const tanggalAcara = new Date("May 20, 2026 10:00:00").getTime();
+    
+    const hitungMundur = setInterval(function() {
+      const sekarang = new Date().getTime();
+      const selisih = tanggalAcara - sekarang;
+      
+      const hari = Math.floor(selisih / (1000 * 60 * 60 * 24));
+      const jam = Math.floor((selisih % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const menit = Math.floor((selisih % (1000 * 60 * 60)) / (1000 * 60));
+      const detik = Math.floor((selisih % (1000 * 60)) / 1000);
+      
+      document.getElementById("hari").innerHTML = hari < 10 ? "0" + hari : hari;
+      document.getElementById("jam").innerHTML = jam < 10 ? "0" + jam : jam;
+      document.getElementById("menit").innerHTML = menit < 10 ? "0" + menit : menit;
+      document.getElementById("detik").innerHTML = detik < 10 ? "0" + detik : detik;
+      
+      if (selisih < 0) {
+        clearInterval(hitungMundur);
+        document.querySelector(".countdown").innerHTML = "<h3 style='color:#FFD700'>Acara Sedang Berlangsung</h3>";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
